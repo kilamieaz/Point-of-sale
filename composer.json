@@ -24,7 +24,12 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "app/Helpers/DateIndonesia.php",
+            "app/Helpers/FormatMoney.php",
+            "app/Helpers/Terbilang.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
