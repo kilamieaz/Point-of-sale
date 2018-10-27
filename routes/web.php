@@ -15,59 +15,59 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::group(['middleware' => 'web'], function(){
-   Route::get('user/profile', 'UserController@profil')->name('user.profil');
-   Route::patch('user/{id}/change', 'UserController@changeProfil');
+Route::group(['middleware' => 'web'], function () {
+    Route::get('user/profile', 'UserController@profil')->name('user.profil');
+    Route::patch('user/{id}/change', 'UserController@changeProfil');
 
-   Route::get('transaction/new', 'SalesDetailController@newSession')->name('transaction.new');
-   Route::get('transaction/{id}/data', 'SalesDetailController@listData')->name('transaction.data');
-   Route::get('transaction/printNota', 'SalesDetailController@printNota')->name('transaction.cetak');
-   Route::get('transaction/notapdf', 'SalesDetailController@notaPDF')->name('transaction.pdf');
-   Route::post('transaction/save', 'SalesDetailController@saveData');
-   Route::get('transaction/loadform/{discount}/{total}/{beAccepted}', 'SalesDetailController@loadForm');
-   Route::resource('transaction', 'SalesDetailController');
+    Route::get('transaction/new', 'SalesDetailController@newSession')->name('transaction.new');
+    Route::get('transaction/{id}/data', 'SalesDetailController@listData')->name('transaction.data');
+    Route::get('transaction/printNota', 'SalesDetailController@printNota')->name('transaction.cetak');
+    Route::get('transaction/notapdf', 'SalesDetailController@notaPDF')->name('transaction.pdf');
+    Route::post('transaction/save', 'SalesDetailController@saveData');
+    Route::get('transaction/loadform/{discount}/{total}/{beAccepted}', 'SalesDetailController@loadForm');
+    Route::resource('transaction', 'SalesDetailController');
 });
 
-Route::group(['middleware' => ['web', 'checkUser:1' ]], function(){
-   Route::get('category/data', 'CategoryController@listData')->name('category.data');
-   Route::resource('category', 'CategoryController');
+Route::group(['middleware' => ['web', 'checkUser:1' ]], function () {
+    Route::get('category/data', 'CategoryController@listData')->name('category.data');
+    Route::resource('category', 'CategoryController');
 
-   Route::get('product/data', 'ProductController@listData')->name('product.data');
-   Route::post('product/delete', 'ProductController@deleteSelected');
-   Route::post('product/print', 'ProductController@printBarcode');
-   Route::resource('product', 'ProductController');
+    Route::get('product/data', 'ProductController@listData')->name('product.data');
+    Route::post('product/delete', 'ProductController@deleteSelected');
+    Route::post('product/print', 'ProductController@printBarcode');
+    Route::resource('product', 'ProductController');
 
-   Route::get('supplier/data', 'SupplierController@listData')->name('supplier.data');
-   Route::resource('supplier', 'SupplierController');
+    Route::get('supplier/data', 'SupplierController@listData')->name('supplier.data');
+    Route::resource('supplier', 'SupplierController');
 
-   Route::get('member/data', 'MemberController@listData')->name('member.data');
-   Route::post('member/print', 'MemberController@printCard');
-   Route::resource('member', 'MemberController');
+    Route::get('member/data', 'MemberController@listData')->name('member.data');
+    Route::post('member/print', 'MemberController@printCard');
+    Route::resource('member', 'MemberController');
 
-   Route::get('expense/data', 'ExpenseController@listData')->name('expense.data');
-   Route::resource('expense', 'ExpenseController');
+    Route::get('expense/data', 'ExpenseController@listData')->name('expense.data');
+    Route::resource('expense', 'ExpenseController');
 
 
-   Route::get('user/data', 'UserController@listData')->name('user.data');
-   Route::resource('user', 'UserController');
+    Route::get('user/data', 'UserController@listData')->name('user.data');
+    Route::resource('user', 'UserController');
 
-   Route::get('purchase/data', 'PurchaseController@listData')->name('purchase.data');
-   Route::get('purchase/{id}/create', 'PurchaseController@create');
-   Route::get('purchase/{id}/show', 'PurchaseController@show');
-   Route::resource('purchase', 'PurchaseController');   
+    Route::get('purchase/data', 'PurchaseController@listData')->name('purchase.data');
+    Route::get('purchase/{id}/create', 'PurchaseController@create');
+    Route::get('purchase/{id}/show', 'PurchaseController@show');
+    Route::resource('purchase', 'PurchaseController');
 
-   Route::get('purchase_detail/{id}/data', 'PurchaseDetailController@listData')->name('purchase_detail.data');
-   Route::get('purchase_detail/loadform/{diskon}/{total}', 'PurchaseDetailController@loadForm');
-   Route::resource('purchase_detail', 'PurchaseDetailController');   
+    Route::get('purchase_detail/{id}/data', 'PurchaseDetailController@listData')->name('purchase_detail.data');
+    Route::get('purchase_detail/loadform/{diskon}/{total}', 'PurchaseDetailController@loadForm');
+    Route::resource('purchase_detail', 'PurchaseDetailController');
 
-   Route::get('sales/data', 'SalesController@listData')->name('sales.data');
-   Route::get('sales/{id}/show', 'SalesController@show');
-   Route::resource('sales', 'SalesController');
+    Route::get('sales/data', 'SalesController@listData')->name('sales.data');
+    Route::get('sales/{id}/show', 'SalesController@show');
+    Route::resource('sales', 'SalesController');
 
-   Route::get('report', 'ReportController@index')->name('report.index');
-   Route::post('report', 'ReportController@refresh')->name('report.refresh');
-   Route::get('report/data/{start}/{end}', 'ReportController@listData')->name('report.data'); 
-   Route::get('report/pdf/{start}/{end}', 'ReportController@exportPDF');
+    Route::get('report', 'ReportController@index')->name('report.index');
+    Route::post('report', 'ReportController@refresh')->name('report.refresh');
+    Route::get('report/data/{start}/{end}', 'ReportController@listData')->name('report.data');
+    Route::get('report/pdf/{start}/{end}', 'ReportController@exportPDF');
 
-   Route::resource('setting', 'SettingController');
+    Route::resource('setting', 'SettingController');
 });
