@@ -28,7 +28,7 @@
         "files": [
             "app/Helpers/DateIndonesia.php",
             "app/Helpers/FormatMoney.php",
-            "app/Helpers/Terbilang.php"
+            "app/Helpers/SpelledNumber.php"
         ]
     },
     "autoload-dev": {
