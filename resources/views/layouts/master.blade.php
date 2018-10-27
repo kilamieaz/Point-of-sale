@@ -111,23 +111,23 @@ desired effect
                 </div>
 
                 <!-- Sidebar Menu -->
-                <ul class="sidebar-menu" data-widget="">
+                <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MENU NAVIGASI</li>
                     <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
                     @if( Auth::user()->level == 1 )
-                        <li><a href="{{ route('kategori.index') }}"><i class="fa fa-cube"></i> <span>Kategori</span></a></li>
-                        <li><a href="{{ route('produk.index') }}"><i class="fa fa-cubes"></i> <span>Produk</span></a></li>
+                        <li><a href="{{ route('category.index') }}"><i class="fa fa-cube"></i> <span>Kategori</span></a></li>
+                        <li><a href="{{ route('product.index') }}"><i class="fa fa-cubes"></i> <span>Produk</span></a></li>
                         <li><a href="{{ route('member.index') }}"><i class="fa fa-credit-card"></i> <span>Member</span></a></li>
                         <li><a href="{{ route('supplier.index') }}"><i class="fa fa-truck"></i> <span>Supplier</span></a></li>
-                        <li><a href="{{ route('pengeluaran.index') }}"><i class="fa fa-money"></i> <span>Pengeluaran</span></a></li><li><a href="{{ route('user.index') }}""><i class="fa fa-user"></i> <span>User</span></a></li>       
-                        <li><a href="{{ route('penjualan.index') }}"><i class="fa fa-upload"></i> <span>Penjualan</span></a></li>
-                        <li><a href="{{ route('pembelian.index') }}"><i class="fa fa-download"></i> <span>Pembelian</span></a></li>
-                        <li><a href="{{ route('laporan.index') }}"><i class="fa fa-file-pdf-o"></i> <span>Laporan</span></a></li>
+                        <li><a href="{{ route('expense.index') }}"><i class="fa fa-money"></i> <span>Pengeluaran</span></a></li><li><a href="{{ route('user.index') }}""><i class="fa fa-user"></i> <span>User</span></a></li>       
+                        <li><a href="{{ route('sales.index') }}"><i class="fa fa-upload"></i> <span>Penjualan</span></a></li>
+                        <li><a href="{{ route('purchase.index') }}"><i class="fa fa-download"></i> <span>Pembelian</span></a></li>
+                        <li><a href="{{ route('report.index') }}"><i class="fa fa-file-pdf-o"></i> <span>Laporan</span></a></li>
                         <li><a href="{{ route('setting.index') }}"><i class="fa fa-gears"></i> <span>Setting</span></a></li>
                     @else
-                        <li><a href="{{ route('transaksi.index') }}"><i class="fa fa-shopping-cart"></i> <span>Transaksi</span></a></li>
-                        <li><a href="{{ route('transaksi.new') }}"><i class="fa fa-cart-plus"></i> <span>Transaksi Baru</span></a></li>
+                        <li><a href="{{ route('transaction.index') }}"><i class="fa fa-shopping-cart"></i> <span>Transaksi</span></a></li>
+                        <li><a href="{{ route('transaction.new') }}"><i class="fa fa-cart-plus"></i> <span>Transaksi Baru</span></a></li>
                     @endif
                 </ul>
                 <!-- /.sidebar-menu -->
