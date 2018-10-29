@@ -11,16 +11,16 @@ class SettingTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('settings')->insert(array(
+        DB::table('settings')->insert([
             [
-                'company_name' => 'Pos', 
+                'company_name' => 'Pos',
                 'address' => 'Jl. in aja dulu, Jambi, Kota Jambi',
-                'telepon' => '08228100519',
+                'telephone' => '08228100519',
                 'logo' => 'logo.png',
                 'member_card' => 'card.png',
                 'member_discount' => '10',
                 'note_type' => '0'
             ]
-        ));
+        ]);
     }
 }
