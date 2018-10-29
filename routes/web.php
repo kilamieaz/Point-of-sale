@@ -28,7 +28,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('transaction', 'SalesDetailController');
 });
 
-Route::group(['middleware' => ['web', 'checkUser:1' ]], function () {
+Route::group(['middleware' => ['web', 'checkUser:1']], function () {
     Route::get('category/data', 'CategoryController@listData')->name('category.data');
     Route::resource('category', 'CategoryController');
 
@@ -46,7 +46,6 @@ Route::group(['middleware' => ['web', 'checkUser:1' ]], function () {
 
     Route::get('expense/data', 'ExpenseController@listData')->name('expense.data');
     Route::resource('expense', 'ExpenseController');
-
 
     Route::get('user/data', 'UserController@listData')->name('user.data');
     Route::resource('user', 'UserController');
