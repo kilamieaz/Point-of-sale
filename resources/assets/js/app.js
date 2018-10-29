@@ -9,6 +9,8 @@ require('./bootstrap');
 require('admin-lte');
 require('jquery');
 require('admin-lte/plugins/iCheck/icheck.js');
+require('datatables.net-dt');
+require('bootstrap-validator');
 
 // window.Vue = require('vue');
 
