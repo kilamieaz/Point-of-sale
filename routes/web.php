@@ -30,12 +30,12 @@ Route::group(['middleware' => 'web'], function () {
 
 Route::group(['middleware' => ['web', 'checkUser:1']], function () {
     Route::get('category/data', 'CategoryController@listData')->name('category.data');
-    Route::resource('category', 'CategoryController');
+    Route::resource('category', 'CategoryController')->except('create', 'show');
 
     Route::get('product/data', 'ProductController@listData')->name('product.data');
     Route::post('product/delete', 'ProductController@deleteSelected');
     Route::post('product/print', 'ProductController@printBarcode');
-    Route::resource('product', 'ProductController');
+    Route::resource('product', 'ProductController')->except('create', 'show');
 
     Route::get('supplier/data', 'SupplierController@listData')->name('supplier.data');
     Route::resource('supplier', 'SupplierController');
