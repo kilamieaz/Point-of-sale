@@ -14,13 +14,11 @@ class CategoryController extends Controller
 
     public function listData()
     {
-        $category = Category::orderBy('id_category', 'desc')->get();
-        $no = 0;
+        $categories = Category::orderBy('id_category', 'desc')->get();
         $data = [];
-        foreach ($category as $list) {
-            $no++;
+        foreach ($categories as $index => $list) {
             $row = [];
-            $row[] = $no;
+            $row[] = ++$index;
             $row[] = $list->name_category;
             $row[] = '<div class="btn-group">
                <a onclick="editForm(' . $list->id_category . ')" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>
@@ -34,9 +32,7 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $category = new Category;
-        $category->name_category = $request['name'];
-        $category->save();
+        Category::create($request->all());
     }
 
     public function edit(Category $category)
@@ -46,8 +42,7 @@ class CategoryController extends Controller
 
     public function update(Request $request, Category $category)
     {
-        $category->name_category = $request['name'];
-        $category->update();
+        $category->update($request->all());
     }
 
     public function destroy(Category $category)

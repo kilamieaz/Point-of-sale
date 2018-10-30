@@ -56,7 +56,7 @@ $(function(){
    
    $('#modal-form form').validator().on('submit', function(e){
       if(!e.isDefaultPrevented()){
-         var id = $('#id').val();
+         var id = $('#id_category').val();
          if(save_method == "add") url = "{{ route('category.store') }}";
          else url = "category/"+id;
          
@@ -96,7 +96,7 @@ function editForm(id){
      success : function(data){
        $('#modal-form').modal('show');
        $('.modal-title').text('Edit Kategori');
-       $('#id').val(data.id_category);
+       $('#id_category').val(data.id_category);
        $('#name').val(data.name_category);
        
      },

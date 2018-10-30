@@ -13,11 +13,11 @@
 
                 <div class="modal-body">
 
-                    <input type="hidden" id="id" name="id">
+                    <input type="hidden" id="id_category" name="id_category">
                     <div class="form-group">
-                        <label for="nama" class="col-md-3 control-label">Nama Produk</label>
+                        <label for="name_category" class="col-md-3 control-label">Nama Produk</label>
                         <div class="col-md-6">
-                            <input id="nama" type="text" class="form-control" name="name" autofocus required>
+                            <input id="name_category" type="text" class="form-control" name="name_category" autofocus required>
                             <span class="help-block with-errors"></span>
                         </div>
                     </div>
