@@ -32,19 +32,9 @@ class SupplierController extends Controller
         return response()->json($output);
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         Supplier::create($request->all());
-    }
-
-    public function show(Supplier $supplier)
-    {
-        //
     }
 
     public function edit(Supplier $supplier)

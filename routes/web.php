@@ -38,11 +38,11 @@ Route::group(['middleware' => ['web', 'checkUser:1']], function () {
     Route::resource('product', 'ProductController')->except('create', 'show');
 
     Route::get('supplier/data', 'SupplierController@listData')->name('supplier.data');
-    Route::resource('supplier', 'SupplierController');
+    Route::resource('supplier', 'SupplierController')->except('create', 'show');
 
     Route::get('member/data', 'MemberController@listData')->name('member.data');
     Route::post('member/print', 'MemberController@printCard');
-    Route::resource('member', 'MemberController');
+    Route::resource('member', 'MemberController')->except('create', 'show');
 
     Route::get('expense/data', 'ExpenseController@listData')->name('expense.data');
     Route::resource('expense', 'ExpenseController');
