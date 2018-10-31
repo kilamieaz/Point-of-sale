@@ -1,7 +1,10 @@
 <?php
-function date_indonesia($tgl){
-    $dt = new Carbon($tgl);
-    setlocale(LC_TIME, 'IND');
-    
-    return $dt->formatLocalized('%d %B %Y %H:%M:%S');  
+
+use Illuminate\Support\Carbon;
+
+function date_indonesia($date)
+{
+    setlocale(LC_ALL, 'id_ID.utf8');
+    $date = Carbon::parse($date);
+    return $date->formatLocalized('%A, %d %B %Y');
 }
