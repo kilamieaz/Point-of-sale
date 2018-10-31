@@ -44,8 +44,8 @@ Route::group(['middleware' => ['web', 'checkUser:1']], function () {
     Route::post('member/print', 'MemberController@printCard');
     Route::resource('member', 'MemberController')->except('create', 'show');
 
-    Route::get('expense/data', 'ExpenseController@listData')->name('expense.data');
-    Route::resource('expense', 'ExpenseController');
+    Route::get('expenses/data', 'ExpensesController@listData')->name('expenses.data');
+    Route::resource('expenses', 'ExpensesController')->except('create', 'show');
 
     Route::get('user/data', 'UserController@listData')->name('user.data');
     Route::resource('user', 'UserController');

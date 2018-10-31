@@ -120,7 +120,7 @@ desired effect
                         <li><a href="{{ route('product.index') }}"><i class="fa fa-cubes"></i> <span>Produk</span></a></li>
                         <li><a href="{{ route('member.index') }}"><i class="fa fa-credit-card"></i> <span>Member</span></a></li>
                         <li><a href="{{ route('supplier.index') }}"><i class="fa fa-truck"></i> <span>Supplier</span></a></li>
-                        <li><a href="{{ route('expense.index') }}"><i class="fa fa-money"></i> <span>Pengeluaran</span></a></li><li><a href="{{ route('user.index') }}""><i class="fa fa-user"></i> <span>User</span></a></li>       
+                        <li><a href="{{ route('expenses.index') }}"><i class="fa fa-money"></i> <span>Pengeluaran</span></a></li><li><a href="{{ route('user.index') }}""><i class="fa fa-user"></i> <span>User</span></a></li>       
                         <li><a href="{{ route('sales.index') }}"><i class="fa fa-upload"></i> <span>Penjualan</span></a></li>
                         <li><a href="{{ route('purchase.index') }}"><i class="fa fa-download"></i> <span>Pembelian</span></a></li>
                         <li><a href="{{ route('report.index') }}"><i class="fa fa-file-pdf-o"></i> <span>Laporan</span></a></li>
