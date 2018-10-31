@@ -160,7 +160,7 @@ function deleteData(id){
 }
 
 function deleteAll(){
-  if($('input:checked').length < 1){
+  if(!$('[name="id_product[]"]:checked').length){
     alert('Pilih data yang akan dihapus!');
   }else if(confirm("Apakah yakin akan menghapus semua data terpilih?")){
      $.ajax({
@@ -178,7 +178,7 @@ function deleteAll(){
 }
 
 function printBarcode(){
-  if($('input:checked').length < 1){
+  if(!$('[name="id_product[]"]:checked').length){
     alert('Pilih data yang akan dicetak!');
   }else{
     $('#form-produk').attr('target', '_blank').attr('action', "product/print").submit();
