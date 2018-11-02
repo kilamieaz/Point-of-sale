@@ -61,14 +61,14 @@ desired effect
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="{{ asset('img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+                                <img src="{{ Storage::url(Auth::user()->photo()) }}" class="user-image" alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{{ auth()->user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="{{ asset('img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                    <img src="{{ Storage::url(Auth::user()->photo()) }}" class="img-circle" alt="User Image">
 
                                     <p>
                                         {{ auth()->user()->name }}
@@ -76,8 +76,10 @@ desired effect
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <a href="{{ route('logout') }}" class="btn btn-default btn-flat"
-                                        onclick="event.preventDefault();
+                                    <a href="user/profile" class="btn btn-default btn-flat">
+                                        Change Profile
+                                    </a>
+                                    <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
@@ -101,7 +103,7 @@ desired effect
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="{{ asset('img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                        <img src="{{ Storage::url(Auth::user()->photo()) }}" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
                         <p>{{ auth()->user()->name }}</p>
@@ -116,18 +118,19 @@ desired effect
                     <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
                     @if( Auth::user()->level == 1 )
-                        <li><a href="{{ route('category.index') }}"><i class="fa fa-cube"></i> <span>Kategori</span></a></li>
-                        <li><a href="{{ route('product.index') }}"><i class="fa fa-cubes"></i> <span>Produk</span></a></li>
-                        <li><a href="{{ route('member.index') }}"><i class="fa fa-credit-card"></i> <span>Member</span></a></li>
-                        <li><a href="{{ route('supplier.index') }}"><i class="fa fa-truck"></i> <span>Supplier</span></a></li>
-                        <li><a href="{{ route('expenses.index') }}"><i class="fa fa-money"></i> <span>Pengeluaran</span></a></li><li><a href="{{ route('user.index') }}""><i class="fa fa-user"></i> <span>User</span></a></li>       
-                        <li><a href="{{ route('sales.index') }}"><i class="fa fa-upload"></i> <span>Penjualan</span></a></li>
-                        <li><a href="{{ route('purchase.index') }}"><i class="fa fa-download"></i> <span>Pembelian</span></a></li>
-                        <li><a href="{{ route('report.index') }}"><i class="fa fa-file-pdf-o"></i> <span>Laporan</span></a></li>
-                        <li><a href="{{ route('setting.index') }}"><i class="fa fa-gears"></i> <span>Setting</span></a></li>
+                    <li><a href="{{ route('category.index') }}"><i class="fa fa-cube"></i> <span>Kategori</span></a></li>
+                    <li><a href="{{ route('product.index') }}"><i class="fa fa-cubes"></i> <span>Produk</span></a></li>
+                    <li><a href="{{ route('member.index') }}"><i class="fa fa-credit-card"></i> <span>Member</span></a></li>
+                    <li><a href="{{ route('supplier.index') }}"><i class="fa fa-truck"></i> <span>Supplier</span></a></li>
+                    <li><a href="{{ route('expenses.index') }}"><i class="fa fa-money"></i> <span>Pengeluaran</span></a></li>
+                    <li><a href="{{ route('user.index') }}""><i class=" fa fa-user"></i> <span>User</span></a></li>
+                    <li><a href="{{ route('sales.index') }}"><i class="fa fa-upload"></i> <span>Penjualan</span></a></li>
+                    <li><a href="{{ route('purchase.index') }}"><i class="fa fa-download"></i> <span>Pembelian</span></a></li>
+                    <li><a href="{{ route('report.index') }}"><i class="fa fa-file-pdf-o"></i> <span>Laporan</span></a></li>
+                    <li><a href="{{ route('setting.index') }}"><i class="fa fa-gears"></i> <span>Setting</span></a></li>
                     @else
-                        <li><a href="{{ route('transaction.index') }}"><i class="fa fa-shopping-cart"></i> <span>Transaksi</span></a></li>
-                        <li><a href="{{ route('transaction.new') }}"><i class="fa fa-cart-plus"></i> <span>Transaksi Baru</span></a></li>
+                    <li><a href="{{ route('transaction.index') }}"><i class="fa fa-shopping-cart"></i> <span>Transaksi</span></a></li>
+                    <li><a href="{{ route('transaction.new') }}"><i class="fa fa-cart-plus"></i> <span>Transaksi Baru</span></a></li>
                     @endif
                 </ul>
                 <!-- /.sidebar-menu -->
@@ -167,7 +170,7 @@ desired effect
                         </div>
                     </div>
                     <div class="box-body">
-                        
+
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">

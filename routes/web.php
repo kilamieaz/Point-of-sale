@@ -16,8 +16,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::group(['middleware' => 'web'], function () {
-    Route::get('user/profile', 'UserController@profil')->name('user.profil');
-    Route::patch('user/{id}/change', 'UserController@changeProfil');
+    Route::get('user/profile', 'UserController@profile')->name('user.profile');
+    Route::patch('user/{id}/change', 'UserController@changeProfile');
 
     Route::get('transaction/new', 'SalesDetailController@newSession')->name('transaction.new');
     Route::get('transaction/{id}/data', 'SalesDetailController@listData')->name('transaction.data');
