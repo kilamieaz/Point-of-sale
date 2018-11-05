@@ -53,11 +53,11 @@ Route::group(['middleware' => ['web', 'checkUser:1']], function () {
     Route::get('purchase/data', 'PurchaseController@listData')->name('purchase.data');
     Route::get('purchase/{id}/create', 'PurchaseController@create');
     Route::get('purchase/{id}/show', 'PurchaseController@show');
-    Route::resource('purchase', 'PurchaseController');
+    Route::resource('purchase', 'PurchaseController')->except('edit', 'update');
 
     Route::get('purchase_detail/{id}/data', 'PurchaseDetailController@listData')->name('purchase_detail.data');
     Route::get('purchase_detail/loadform/{diskon}/{total}', 'PurchaseDetailController@loadForm');
-    Route::resource('purchase_detail', 'PurchaseDetailController');
+    Route::resource('purchase_detail', 'PurchaseDetailController')->except('create', 'show', 'edit');
 
     Route::get('sales/data', 'SalesController@listData')->name('sales.data');
     Route::get('sales/{id}/show', 'SalesController@show');

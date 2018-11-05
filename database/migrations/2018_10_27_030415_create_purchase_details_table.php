@@ -15,11 +15,11 @@ class CreatePurchaseDetailsTable extends Migration
     {
         Schema::create('purchase_details', function (Blueprint $table) {
             $table->increments('id_purchase_detail');
-            $table->integer('id_purchase')->unsigned();         
-            $table->bigInteger('product_code')->unsigned();           
-            $table->bigInteger('purchase_price')->unsigned();           
-            $table->integer('total')->unsigned();             
-            $table->bigInteger('sub_total')->unsigned();    
+            $table->integer('id_purchase')->unsigned();
+            $table->bigInteger('code_product')->unsigned();
+            $table->bigInteger('purchase_price')->unsigned();
+            $table->integer('total')->unsigned();
+            $table->bigInteger('sub_total')->unsigned();
             $table->timestamps();
         });
     }
