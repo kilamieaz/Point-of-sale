@@ -15,11 +15,11 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->increments('id_purchase');
-            $table->integer('id_supplier')->unsigned();            
-            $table->integer('total_item')->unsigned();         
-            $table->bigInteger('total_price')->unsigned();           
-            $table->integer('discount')->unsigned();       
-            $table->bigInteger('pay')->unsigned();
+            $table->integer('id_supplier')->unsigned();
+            $table->integer('total_item')->unsigned()->default(0);
+            $table->bigInteger('total_price')->unsigned()->default(0);
+            $table->integer('discount')->unsigned()->default(0);
+            $table->bigInteger('pay')->unsigned()->default(0);
             $table->timestamps();
         });
     }
