@@ -21,7 +21,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('transaction/new', 'SalesDetailController@newSession')->name('transaction.new');
     Route::get('transaction/{id}/data', 'SalesDetailController@listData')->name('transaction.data');
-    Route::get('transaction/printNota', 'SalesDetailController@printNota')->name('transaction.cetak');
+    Route::get('transaction/printNota', 'SalesDetailController@printNota')->name('transaction.print');
     Route::get('transaction/notapdf', 'SalesDetailController@notaPDF')->name('transaction.pdf');
     Route::post('transaction/save', 'SalesDetailController@saveData');
     Route::get('transaction/loadform/{discount}/{total}/{beAccepted}', 'SalesDetailController@loadForm');
