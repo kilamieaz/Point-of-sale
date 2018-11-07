@@ -27,6 +27,6 @@ class CreatePurchaseDetailProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('purchase_detail_product');
+        Schema::dropIfExists('product_purchase_detail');
     }
 }

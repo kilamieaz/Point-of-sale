@@ -15,12 +15,12 @@ class CreateSalesDetailsTable extends Migration
     {
         Schema::create('sales_details', function (Blueprint $table) {
             $table->increments('id_sales_detail');
-            $table->integer('id_sales')->unsigned();       
-            $table->bigInteger('product_code')->unsigned();         
-            $table->bigInteger('selling_price')->unsigned();         
-            $table->integer('total')->unsigned();    
-            $table->integer('discount')->unsigned();                 
-            $table->bigInteger('sub_total')->unsigned();    
+            $table->integer('id_sales')->unsigned();
+            $table->bigInteger('code_product')->unsigned();
+            $table->bigInteger('selling_price')->unsigned();
+            $table->integer('total')->unsigned();
+            $table->integer('discount')->unsigned();
+            $table->bigInteger('sub_total')->unsigned();
             $table->timestamps();
         });
     }
