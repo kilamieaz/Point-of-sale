@@ -53,7 +53,8 @@ class SalesController extends Controller
 
     public function show(Sales $sales)
     {
-        $salesDetail = SalesDetail::leftJoin('products', 'products.code_product', '=', 'sales_details.code_product')
+        // $salesDetail = SalesDetail::leftJoin('products', 'products.code_product', '=', 'sales_details.code_product')
+        $salesDetail = SalesDetail::with('product')
         ->where('id_sales', '=', $sales->id_sales)
         ->get();
         $data = [];
