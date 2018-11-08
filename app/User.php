@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -29,7 +30,9 @@ class User extends Authenticatable
 
     public function photo()
     {
-        return $this->photo ?: 'img/user.png';
-        // return $this->photo ?: 'img/user.png';
+        if (!$this->photo) {
+            return asset('images/user.png');
+        }
+        return Storage::url($this->photo);
     }
 }

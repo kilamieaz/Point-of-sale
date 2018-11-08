@@ -29,7 +29,7 @@ Edit Profile
                 <div class="col-md-4">
                     <input id="photo" type="file" class="form-control" name="photo">
                     <br>
-                    <div class="show-photo"> <img src="{{ Storage::url($user->photo()) }}" width="200"></div>
+                    <div class="show-photo"> <img src="{{ $user->photo() }}" width="200"></div>
                 </div>
             </div>
 
